@@ -1,28 +1,33 @@
 {
-  "name": "app-facilito-sin-modelo-vista-controlador",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
+  "name": "MultiWebRTC",
+  "description": "Example of multi user webrtc",
+  "version": "0.0.2-1",
+  "engines": {
+    "node": ">= 0.6.0"
   },
   "dependencies": {
-    "body-parser": "^1.13.3",
-    "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.3.3",
-    "express": "^4.13.3",
-    "express-session": "^1.12.0",
-    "jade": "^1.11.0",
-    "mongoose": "^4.2.2",
-    "morgan": "^1.6.1",
-    "serve-favicon": "^2.3.0"
+    "webrtc.io": "latest",
+    "webrtc.io-client": "latest",
+    "express": "3.1.0",
+    "ws": "latest"
   },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-develop": "^0.4.0",
-    "grunt-contrib-stylus": "^0.22.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "request": "^2.60.0",
-    "time-grunt": "^1.2.1",
-    "load-grunt-tasks": "^3.2.0"
-  }
+  "subdomain": "MultiWebRTC",
+  "scripts": {
+    "start": "example/server.js"
+  },
+  "author": "Ben Brittain",
+  "contributors": [
+    {
+      "name": "Ben Brittain",
+      "email": "ben@brittain.org"
+    },
+    {
+      "name": "Dennis Mårtensson",
+      "email": "me@dennis.is"
+    },
+    {
+      "name": "David Peter",
+      "email": "david.a.peter@gmail.com"
+    }
+  ]
 }
