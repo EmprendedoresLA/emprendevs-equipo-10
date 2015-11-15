@@ -1,0 +1,321 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	background: #FFF;
+	font-family: helvetica;
+	font-size: 1.2em;
+	width: 100%;
+	height: auto !important;
+}
+
+body.loading section,
+body.loading footer { display: none; }
+body.loading section#loader { display: block; }
+
+/**************************************************
+***					Home
+**************************************************/
+
+div#loader {
+	background-color: #131831;
+	background-image: url(images/logoColors.svg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+section#fullHome { 
+	background-blend-mode: multiply;
+	background-color: rgba(27, 34, 78, 0.6);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: auto 100%;
+	height: 70%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+video {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#content { margin-top: 50px; } 
+
+/**************************************************
+***					Menu
+**************************************************/
+
+section#menu {
+	background: #FFF;
+	position: fixed;
+	top: 0px;
+}
+body.mobile section#menu,
+body.mobile section#menu svg {
+	background-color: rgba(229, 9, 20, 1);
+}
+#menu nav {
+	background-color: rgb(229, 9, 20);
+	height: 100%;
+}
+body.mobile #menu nav {
+	background-color: rgb(229, 9, 20);
+}
+body.mobile #menu nav ul,
+body.mobile #menu nav ul ul {
+	background-color: rgb(229, 9, 20);
+	height: 100%;
+}
+#menu nav ul li {
+	background-color: rgb(229, 9, 20);
+	display: table;
+	height: 100%;
+}
+#menu nav ul li a,
+#menu nav ul li p {
+	color: rgb(255, 255, 255);;
+	display: table-cell;
+	height: 100%;
+	letter-spacing: 2px;
+	vertical-align: middle;
+}
+body.mobile #menu nav ul li a,
+body.mobile #menu nav ul li p {
+	color: #FFF;
+}
+#menu nav ul li:active a,
+#menu nav ul li:active p,
+#menu nav ul li:hover a,
+#menu nav ul li:hover p {
+	color: #05182F;
+	font-weight: bold;
+	height: 100%;
+}
+
+/**************************************************
+***					Services
+**************************************************/
+
+.overlayInfo,
+#sliderPaginator { display: none; }
+
+
+/**************************************************
+***					Footer
+**************************************************/
+
+footer #mapContent {
+	background-position: center center;
+	background-size: cover;
+	height: 120px;
+	margin: 15px auto;
+	width: 95%;
+}
+
+/**************************************************					**************************************************
+***													  Media Query
+/**************************************************					**************************************************/
+
+/**************************************************		Landscape	**************************************************/
+
+@media only screen and (orientation: landscape) {
+	section#fullHome { background-size: 100% auto; }
+	section#fullHome video { width: 120%; }
+
+	#slider ul#backImages li { background-size: 100% auto; }
+	footer .copy div { background-size: 40% auto; }
+}
+
+/**************************************************		Portrait	**************************************************/
+
+@media only screen and (orientation: portrait) {
+	section#fullHome video { height: 120%; }
+	#slider ul#backImages li { background-size: auto 100%; }
+}
+
+/**************************************************		Desktop		**************************************************/
+
+@media only screen and (orientation: landscape) and (max-width: 1024px){
+	section#fullHome #header h1 { background-size: 30%; }
+	section#fullHome #inConstruction p { font-size: 70%; }
+	footer #footerCont { background-size: auto 250%; }
+	footer #footerCont p { font-size: 50%; padding-top: 3px; }
+}
+
+/**************************************************		MobileL		**************************************************/
+
+@media only screen and (orientation: landscape) and (max-width: 720px){
+	body { font-size: 0.9em; }
+	section#fullHome #header h1 { background-size: auto 100%; }
+	section#fullHome #inConstruction div p { line-height: 15px; padding: 2px 0 10px; }
+
+	#menu nav ul li a,
+	#menu nav ul li p { font-size: 70%; padding: 0 5px; }
+
+	#services #aboutServices h2, #services #response div { padding: 1% 2%; }
+	#services #slider div#overlayTitle { font-size: 150%; }
+	#services #slider div#overlayDescription { font-size: 100%; }
+	#services #slider ul#listItems { display: none; }
+	#slider #sliderPaginator .whiteArrow { height: 40px; width: 40px; }
+
+	footer .centerFooter { display: block; height: 60%; }
+	footer #footerLogo {
+		background-size: 80%;
+		display: block;
+		float: left;
+		height: 100%;
+		margin: 0;
+		width: 20%;
+	}
+	footer #footerCont {
+		display: block;
+		float: left;
+		padding: 10px 0 0;
+		width: 80%;
+	}
+	footer #footerCont p { font-size: 80%; line-height: 10px; padding-top: 0; }
+	footer #footerCont p a.email { display: table; margin: 0 auto; }
+	footer #footerCont p.newLine { padding: 0; }
+	footer .copy { height: 25%; }
+	footer .copy div { background-position: 10% 10%; background-size: 60% auto; }
+	footer .copy div span { line-height: 15px; }
+}
+
+/**************************************************		MobileP		**************************************************/
+
+@media only screen and (orientation: portrait) and (max-width: 800px){
+	body { font-size: 0.9em; }
+	section#fullHome #inConstruction div p { line-height: 15px; }
+
+	#menu nav ul li a,
+	#menu nav ul li p { font-size: 70%; padding: 0 5px; }
+
+	#services #aboutServices h2, #services #response div { padding: 1% 2%; }
+	#services #slider div#overlayTitle { font-size: 150%; width: 100%; }
+	#services #slider div#overlayTitle h1 { width: 100%; }
+	#services #slider div#overlayDescription { font-size: 100%; }
+	#services #slider ul#listItems { display: none; }
+	#slider #sliderPaginator .whiteArrow { height: 40px; width: 40px; }
+
+	footer .centerFooter { height: 85%; }
+	footer #footerLogo {
+		background-size: auto 100%;
+		display: block;
+		height: 20%;
+		margin: 10px 0;
+		width: 100%;
+	}
+	footer #footerCont {
+		clear: both;
+		display: block;
+		padding: 0 5%;
+		width: 90%;
+	}
+	footer #footerCont p { font-size: 80%; line-height: 15px; padding-top: 3px; }
+	footer #footerCont p a.email { display: table; margin: 0 auto; }
+	footer .copy { height: 15%; }
+	footer .copy div { background-position: 10% 10%; background-size: 70% auto; }
+	footer .copy div span { line-height: 15px; }
+}
+
+
+/**************************************************
+***					Backgrounds
+**************************************************/
+
+@media only screen and (max-width: 480px){
+	section#fullHome video {
+		background-image: url(images/sea_sm_high.jpg);
+	}
+	section#fullHome #header h1 {
+		background-image: url(images/logoColors.svg);
+	}
+	footer #mapContent {
+		background-image: url(images/mapaFull.jpg);
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 920px){
+	section#fullHome video {
+		background-image: url(images/sea_mid_high.jpg);
+	}
+	section#fullHome #header h1 {
+		background-image: url(images/logoColors.svg);
+	}
+	footer #mapContent {
+		background-image: url(images/mapaFull.jpg);
+	}
+}
+
+@media only screen and (min-width: 921px){
+	section#fullHome video {
+		background-image: url(images/sea_big_high.jpg);
+	}
+	section#fullHome #header h1 {
+		background-image: url(images/logoColors.svg);
+	}
+	footer #mapContent {
+		background-image: url(images/mapaFull.jpg);
+	}
+}
+
