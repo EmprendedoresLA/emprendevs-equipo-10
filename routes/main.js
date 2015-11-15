@@ -29,18 +29,19 @@ app.get('/video/ver/:vid/:id', function(req, res){
                         if (doc.video == item.video && doc.id != item.id){
                             console.log("encontro video");
                             if (item.estado == "listo"){
-                                console.log("encontro listo");
+                                console.log("encontro listo, segunda rama");
+                                //segunda rama
                             }else{
-                                console.log(" NO encontro listo");
-                                //compartir camara
-                                item.estado = "compartiendo";
+                                console.log(" El servidor alimenta el feed");
+                                //el servidor alimenta el feed
+                                ///////////////////////////////////////////////
                                 item.save(function(err, item){
                                     if(!err){
                                      //redirecciono   res.redirect('/');
-                                     var cServ = new Conect({idFeed:"000000", idClient:item.id,estado:true});
-                                     cServ.save(function(err, item){
+                                     var cServ = new Conect({idFeed:"000000", idClient:item.id, estado:true});
+                                     cServ.save(function(err, peers){
                                         if(!err){
-                                            var cClient = new Conect({idFeed: item.id, estado:false});
+                                            var cClient = new Conect({idFeed: peers.id, estado:false});
                                              cClient.save(function(err, item){
                                                 if(!err){
                                                     item.estado = "listo";
