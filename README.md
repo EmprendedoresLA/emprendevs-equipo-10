@@ -40,7 +40,7 @@ Ruteo:
 	Este servicio de nodejs, atiende la peticion de un cliente que requiere un video. Intentando crear una conexion p2p con otro cliente que este reproduciendo el mismo video en ese momento. En caso de no ser posible, el servidor se encarga de entregar el video al primer cliente, una vez hecho esto, el cliente comienza a entregar el mismo video a otros clientes que lo requieran.
 
 
-flow chart http://k30.km3.net/6/F/4/3/4/2/177.png
+flow chart ->  http://k30.kn3.net/6/F/4/3/4/2/177.png
 
 
 Consta de 2 esquemas en mongodb.
